@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>CRUD de Usuarios</title>
 </head>
+
 <body>
     <h1>CRUD de Usuarios</h1>
     <ul>
@@ -26,15 +28,17 @@
             Teléfono:&nbsp; <input type="number" name="telefono"><br>
             Correo:&nbsp; <input type="email" name="email"><br>
             Contraseña:&nbsp; <input type="password" name="passwd"><br>
-            Tipo de usuario:&nbsp; Personal <input type="radio" name="tipo" value="Personal"> Cliente <input type="radio" name="tipo" value="Cliente" checked><br>
+            Tipo de usuario:&nbsp; Personal <input type="radio" name="tipo" value="Personal"> Cliente <input
+                type="radio" name="tipo" value="Cliente" checked><br>
             <input type="submit" value="Guardar">
         </form>
     </div>
 
+ 
     <!-- Leer Usuarios -->
     <div id="leer_usuarios" style="display:none;">
-        <h2>Leer Usuarios</h2>
-        <!-- Aquí mostrar la lista de usuarios desde leer_usuarios.php -->
+        <div id="contenido_leer_usuarios"></div>
+        <iframe src="usuarios.php" frameborder="0" width="100%" height="400"></iframe>
     </div>
 
     <!-- Actualizar Usuario -->
@@ -71,4 +75,5 @@
         }
     </script>
 </body>
+
 </html>
