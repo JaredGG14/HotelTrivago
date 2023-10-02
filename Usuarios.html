@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD de Usuarios</title>
+</head>
+<body>
+    <h1>CRUD de Usuarios</h1>
+    <ul>
+        <li><a href="#" onclick="mostrarOpcion('crear_usuario');">Crear Usuario</a></li>
+        <li><a href="#" onclick="mostrarOpcion('leer_usuarios');">Leer Usuarios</a></li>
+        <li><a href="#" onclick="mostrarOpcion('actualizar_usuario');">Actualizar Usuario</a></li>
+        <li><a href="#" onclick="mostrarOpcion('eliminar_usuario');">Eliminar Usuario</a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Contenido específico para cada opción del menú -->
+
+    <!-- Crear Usuario -->
+    <div id="crear_usuario" style="display:none;">
+        <h2>Crear Usuario</h2>
+        <form action="crear_usuario.php" method="post">
+            Nombre: &nbsp; <input type="text" name="nombre"><br>
+            Apellido:&nbsp; <input type="text" name="apellido"><br>
+            Teléfono:&nbsp; <input type="number" name="telefono"><br>
+            Correo:&nbsp; <input type="email" name="email"><br>
+            Contraseña:&nbsp; <input type="password" name="passwd"><br>
+            Tipo de usuario:&nbsp; Personal <input type="radio" name="tipo" value="Personal"> Cliente <input type="radio" name="tipo" value="Cliente" checked><br>
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+
+    <!-- Leer Usuarios -->
+    <div id="leer_usuarios" style="display:none;">
+        <h2>Leer Usuarios</h2>
+        <!-- Aquí mostrar la lista de usuarios desde leer_usuarios.php -->
+    </div>
+
+    <!-- Actualizar Usuario -->
+    <div id="actualizar_usuario" style="display:none;">
+        <h2>Actualizar Usuario</h2>
+        <form action="actualizar_usuario.php" method="post">
+            <!-- Campos del formulario (id, nombre, apellido, email, edad) -->
+            <!-- Agrega aquí los campos necesarios -->
+            <input type="submit" value="Actualizar">
+        </form>
+    </div>
+
+    <!-- Eliminar Usuario -->
+    <div id="eliminar_usuario" style="display:none;">
+        <h2>Eliminar Usuario</h2>
+        <form action="eliminar_usuario.php" method="get">
+            <label for="id">ID del Usuario a Eliminar:</label>
+            <input type="text" name="id" required>
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+
+    <!-- Script JavaScript para mostrar/ocultar contenido específico según la opción seleccionada -->
+    <script>
+        function mostrarOpcion(opcion) {
+            // Ocultar todos los elementos
+            document.getElementById("crear_usuario").style.display = "none";
+            document.getElementById("leer_usuarios").style.display = "none";
+            document.getElementById("actualizar_usuario").style.display = "none";
+            document.getElementById("eliminar_usuario").style.display = "none";
+
+            // Mostrar la opción seleccionada
+            document.getElementById(opcion).style.display = "block";
+        }
+    </script>
+</body>
+</html>
