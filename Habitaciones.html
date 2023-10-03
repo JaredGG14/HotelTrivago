@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD de Habitaciones</title>
+</head>
+
+<body>
+    <h1>CRUD de Habitaciones</h1>
+    <ul>
+        <li><a href="#" onclick="mostrarOpcion('crear_habitacion');">Agregar habitacion</a></li>
+        <li><a href="#" onclick="mostrarOpcion('ver_habitaciones');">Ver habitaciones</a></li>
+        <li><a href="#" onclick="mostrarOpcion('lista_habitaciones');">Actualizar Habitaciones</a></li>
+        <li><a href="#" onclick="mostrarOpcion('eliminar_habitacion');">Eliminar Habitaciones</a></li>
+    </ul>
+
+    <hr>
+
+    <!-- Contenido específico para cada opción del menú -->
+
+    <!-- Crear ´Habitación -->
+    <div id="crear_habitacion" style="display:none;">
+        <h2>Crear Habitación</h2>
+        <form action="crear_habitacion.php" method="post">
+            Nombre: &nbsp; <input type="text" name="nombre"><br>
+            Tipo:&nbsp; <input type="text" name="tipo"><br>
+            Camas:&nbsp; <input type="number" name="camas"><br>
+            Estado:&nbsp; Libre <input type="radio" name="estado" value="1"> 
+                        Ocupada <input type="radio" name="estado" value="2" checked><br>
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+
+
+    <!-- Ver Habitaciones -->
+    <div id="ver_habitaciones" style="display:none;">
+        <iframe src="habitaciones.php" frameborder="0" width="100%" height="400"></iframe>
+    </div>
+
+    <!-- Lista de habitaciones por actualizar -->
+    <div id="lista_habitaciones" style="display:none;">
+        <h2>Actualizar Habitaciones (Seleccione la Habitación)</h2>
+        <iframe src="habitaciones.php" frameborder="0" width="100%" height="400"></iframe>
+    </div>
+
+    <!-- Actualizar Habitacion -->
+    <div id="actualizar_habitación" style="display:none;">
+        <iframe src="actualizar_habitación.php" frameborder="0" width="100%" height="400"></iframe>
+    </div>
+
+    <!-- Eliminar Usuario -->
+    <div id="eliminar_habitacion" style="display:none;">
+        <h2>Eliminar Habitacion</h2>
+        <form action="eliminar_habitacion.php" method="get">
+            <label for="id">ID de la  habitaciób a eliminar:</label>
+            <input type="text" name="id" required>
+            <input type="submit" value="Eliminar">
+        </form>
+    </div>
+
+    <!-- Script JavaScript para mostrar/ocultar contenido específico según la opción seleccionada -->
+    <script>
+        function mostrarOpcion(opcion) {
+            // Ocultar todos los elementos
+            document.getElementById("crear_habitacion").style.display = "none";
+            document.getElementById("ver_habitaciones").style.display = "none";
+            document.getElementById("lista_habitaciones").style.display = "none";
+            document.getElementById("actualizar_habitación").style.display = "none";
+            document.getElementById("eliminar_habitacion").style.display = "none";
+
+            // Mostrar la opción seleccionada
+            document.getElementById(opcion).style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
