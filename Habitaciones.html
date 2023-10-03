@@ -19,18 +19,24 @@
 
     <!-- Contenido específico para cada opción del menú -->
 
-    <!-- Crear ´Habitación -->
-    <div id="crear_habitacion" style="display:none;">
-        <h2>Crear Habitación</h2>
-        <form action="crear_habitacion.php" method="post">
-            Nombre: &nbsp; <input type="text" name="nombre"><br>
-            Tipo:&nbsp; <input type="text" name="tipo"><br>
-            Camas:&nbsp; <input type="number" name="camas"><br>
-            Estado:&nbsp; Libre <input type="radio" name="estado" value="1"> 
-                        Ocupada <input type="radio" name="estado" value="2" checked><br>
-            <input type="submit" value="Guardar">
-        </form>
-    </div>
+    <!-- Crear Habitación -->
+<div id="crear_habitacion" style="display:none;">
+    <h2>Crear Habitación</h2>
+    <form action="crear_habitacion.php" method="post">
+        Nombre: &nbsp; <input type="text" name="nombre"><br>
+        Tipo:&nbsp; 
+        <select name="tipo">
+            <option value="basica">Básica</option>
+            <option value="matrimonial">Matrimonial</option>
+            <option value="suite">Suite</option>
+        </select><br>
+        Camas:&nbsp; <input type="number" name="camas"><br>
+        Estado:&nbsp; Libre <input type="radio" name="estado" value="1"> 
+                    Ocupada <input type="radio" name="estado" value="2" checked><br>
+        <input type="submit" value="Guardar">
+    </form>
+</div>
+
 
 
     <!-- Ver Habitaciones -->

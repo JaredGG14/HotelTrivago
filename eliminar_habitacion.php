@@ -2,16 +2,15 @@
 include 'conexion.php';  // Asegúrate de incluir tu archivo de conexión a la base de datos
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $id_usuario = $_GET["id"];
+    $id_habitacion = $_GET["id"];
 
     // SQL para eliminar la habitación con el ID proporcionado
-    $sql = "DELETE FROM usuarios WHERE user_ID = $id_usuario";
+    $sql = "DELETE FROM habitacion WHERE id = $id_habitacion";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Usuario eliminado correctamente.";
+        echo "Habitación eliminada correctamente.";
     } else {
-        echo "Error al eliminar al usuario: " . $conn->error;
+        echo "Error al eliminar la habitación: " . $conn->error;
     }
 }
-
 ?>
