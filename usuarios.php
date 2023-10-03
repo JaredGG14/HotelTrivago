@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
         echo '<td style="padding: 10px; border-bottom: 1px solid #ddd;">' . $row["email"] . '</td>';
         echo '<td style="padding: 10px; border-bottom: 1px solid #ddd;">' . $row["telefono"] . '</td>';
         echo '<td style="padding: 10px; border-bottom: 1px solid #ddd;">' . $row["type"] . '</td>';
+        echo '<td style="padding: 10px; border-bottom: 1px solid #ddd;"><a href="actualizar_usuario.php?id=' . $row["user_ID"] . '">Editar</a></td>';
         echo '</tr>';
     }
     echo '</tbody>';
